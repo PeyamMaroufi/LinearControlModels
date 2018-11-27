@@ -34,3 +34,6 @@ sys = ss(a,b,c,d);
 eigenValues = eig(sys);
 % Getting rank of the system. Full rank assure stability:
 rankValues = rank(obsv(sys));
+% Place the poles at desired place
+L_T= place(a',c',[-10,-9]);
+L=L_T';
