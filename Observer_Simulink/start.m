@@ -10,30 +10,30 @@
 % 3) Find the eigen values and check stability
 % 4) Check controllability
 
-% Now assume that A = [20.6 2; 2 -1] and B=[5 1]
+% Now assume that A = [20.6 0; 2 -1] and B=[5 1]
 % C=[1 1]. Desired poles[-10 -9]. Initial values = [1 1]
 
 clc, clear all,
 % Defining A matrix:
-a = [20.6 2; 2 -1];
+a = [-20.6 0; 0 -1];
 % Defining B matrix:
-b = [5 1]';
+b = [0 1]';
 % Defining C matrix:
-c = [1 1];
+ce = [1 ,1];
 % Defining Initial values:
 x_o = [1 1];
 % Defining D matrix. in this case it is zero
 d = 0;
 % Desired poles:
-sys_poles = [-10 9];
+sys_poles = [-10 -9];
 
 % State space model:
-sys = ss(a,b,c,d);
+sys = ss(a,b,ce,d);
 % Getting eigen values to check stability. Negative values assure
 % stability but it is not required for observability:
 eigenValues = eig(sys);
 % Getting rank of the system. Full rank assure stability:
 rankValues = rank(obsv(sys));
 % Place the poles at desired place
-L_T= place(a',c',[-10,-9]);
+L_T= place(a',ce',sys_poles);
 L=L_T';
