@@ -5,6 +5,7 @@
 %  &&
 % |_._|
 %   |
+%
 % Following are the variables used in this model
 % M1 : Quarter mass kg
 % M2 : Suspension mass kg
@@ -14,8 +15,11 @@
 % b2 : Damping of tire N/m
 % U  : Control Input N
 % The transfer funtion is :
-% ((M1+M2)*s^2+b2*s+K2)/((M1*s^2+b1*s+K1)*(M2*s^2+(b1+b2)*s+(K1+K2))-(b1*s+K1)*(b1*s+K1));
+% G1: ((M1+M2)*s^2+b2*s+K2)/((M1*s^2+b1*s+K1)*(M2*s^2+(b1+b2)*s+(K1+K2))-(b1*s+K1)*(b1*s+K1));
 % which is simplified in the simulink transfer function block
+% The disturbance transfer function is:
+% (-M1*b2*s^3-M1*K2*s^2)/((M1*s^2+b1*s+K1)*(M2*s^2+(b1+b2)*s+(K1+K2))-(b1*s+K1)*(b1*s+K1));
+
 clear all, clc,
 
 M1 = 2500;
