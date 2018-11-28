@@ -1,0 +1,15 @@
+% This file is meant to run before running simulink model. In this file we
+% trying to model the suspension behaviour of a suspension system.
+%  
+%  ||
+%  &&
+% |_._|
+%   |
+% Following are the variables used in this model
+% M1 : Quarter mass
+% M2 : Suspension mass
+% K1 : Spring suspension
+% K2 : Wheel and tire's suspension
+% b1 : Damping of suspension
+% b2 : Damping of tire
+% U 
