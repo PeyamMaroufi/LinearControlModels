@@ -1,5 +1,5 @@
 % Run this script after you run the simulation in Simulink
-
+% The model shows the basic use of discrete integral unit delay
 clc, clear all;
 
 figure(1);
